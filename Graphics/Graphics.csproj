@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6600EA5-A7B0-425A-96E0-2448C6053140}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Graphics</RootNamespace>
+    <AssemblyName>Graphics</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AssimpNet, Version=3.3.1.0, Culture=neutral, PublicKeyToken=0d51b391f59f42a6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AssimpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="GlmNet, Version=0.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GlmNet.0.5.1.0\lib\net40\GlmNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tao.DevIl, Version=1.6.8.3, Culture=neutral, PublicKeyToken=7ec4053013524957, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Tao.DevIl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.FreeGlut, Version=2.4.0.2, Culture=neutral, PublicKeyToken=6e602a6ad6c0d06d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Tao.FreeGlut.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Glfw, Version=2.6.0.0, Culture=neutral, PublicKeyToken=2bb092b6587e4402, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Tao.Glfw.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl, Version=2.1.0.12, Culture=neutral, PublicKeyToken=1ca010269a4501ef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Tao.OpenGl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Platform.Windows, Version=1.0.0.5, Culture=neutral, PublicKeyToken=701104b2da67a104, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Tao.Platform.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Sdl, Version=1.2.13.0, Culture=neutral, PublicKeyToken=9c7a200e36c0094e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Tao.Sdl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="3D Models\md2.cs" />
+    <Compile Include="3D Models\md2LOL.cs" />
+    <Compile Include="BoundingBox.cs" />
+    <Compile Include="bullet.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="GPU.cs" />
+    <Compile Include="GraphicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicsForm.Designer.cs">
+      <DependentUpon>GraphicsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ground.cs" />
+    <Compile Include="MathHelper.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="3D Models\Model3D.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderer.cs" />
+    <Compile Include="Shader.cs" />
+    <Compile Include="Texture.cs" />
+    <EmbeddedResource Include="GraphicsForm.resx">
+      <DependentUpon>GraphicsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="ModelFiles\animated\md2LOL\fiora.md2" />
+    <None Include="ModelFiles\animated\md2LOL\garen.md2" />
+    <None Include="ModelFiles\animated\md2LOL\pirate.md2" />
+    <None Include="ModelFiles\animated\md2LOL\wolf.md2" />
+    <None Include="ModelFiles\animated\md2LOL\zombie.md2" />
+    <None Include="ModelFiles\animated\md2LOL\zombie1.md2" />
+    <None Include="ModelFiles\animated\md2\blade\Blade.md2" />
+    <None Include="ModelFiles\animated\md2\drfreak\drfreak.md2" />
+    <None Include="ModelFiles\animated\md2\samourai\Samourai.md2" />
+    <None Include="ModelFiles\static\building\Building 02.an8" />
+    <None Include="ModelFiles\static\building\Building 02.mtl" />
+    <None Include="ModelFiles\static\building\Building 02.obj" />
+    <None Include="ModelFiles\static\building\Building.3ds" />
+    <None Include="ModelFiles\static\bullet\45.c4d" />
+    <None Include="ModelFiles\static\bullet\45.obj" />
+    <None Include="ModelFiles\static\bullet\bullet_mat_2" />
+    <None Include="ModelFiles\static\bullet\tex_2\.DS_Store" />
+    <None Include="ModelFiles\static\car\dpv.mtl" />
+    <None Include="ModelFiles\static\car\dpv.obj" />
+    <None Include="ModelFiles\static\gun\m4a1.obj" />
+    <None Include="ModelFiles\static\House\house.3ds" />
+    <None Include="ModelFiles\static\House\house.ms3d" />
+    <None Include="ModelFiles\static\House\house.mtl" />
+    <None Include="ModelFiles\static\House\house.obj" />
+    <None Include="ModelFiles\static\jeep\jeep1.3ds" />
+    <None Include="ModelFiles\static\Rocks\rocks.fbx" />
+    <None Include="ModelFiles\static\Rocks\rock_pack.mtl" />
+    <None Include="ModelFiles\static\Rocks\rock_pack.obj" />
+    <None Include="ModelFiles\static\spider\spider.mtl" />
+    <None Include="ModelFiles\static\spider\spider.obj" />
+    <None Include="ModelFiles\static\stones\green.psd" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.3ds" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.abc" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.blend" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.blend1" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.dae" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.fbx" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.mtl" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.obj" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.stl" />
+    <None Include="ModelFiles\static\stones\Low-Poly_Models.x3d" />
+    <None Include="ModelFiles\static\surface\mars.c4d" />
+    <None Include="ModelFiles\static\surface\mars.obj" />
+    <None Include="ModelFiles\static\surface\surfe2.fbx" />
+    <None Include="ModelFiles\static\tree\fir.obj" />
+    <None Include="ModelFiles\static\tree\Tree.mtl" />
+    <None Include="ModelFiles\static\tree\Tree.obj" />
+    <None Include="ModelFiles\static\tree\Tree\.mayaSwatches\bark_0021.jpg.swatch" />
+    <None Include="ModelFiles\static\tree\Tree\Tree.fbm\.mayaSwatches\bark_0021.jpg.swatch" />
+    <None Include="ModelFiles\static\tree\Tree\Tree.fbm\.mayaSwatches\DB2X2_L01.png.swatch" />
+    <None Include="ModelFiles\static\tree\Tree\Tree.fbm\.mayaSwatches\DB2X2_L01_Nor.png.swatch" />
+    <None Include="ModelFiles\static\tree\Tree\Tree.fbm\.mayaSwatches\DB2X2_L01_Spec.png.swatch" />
+    <None Include="ModelFiles\static\tree\Tree\Tree.fbx" />
+    <None Include="ModelFiles\static\tree\Tree\Tree.mtl" />
+    <None Include="ModelFiles\static\tree\Tree\Tree.obj" />
+    <None Include="ModelFiles\static\vegetation\canopy\blad.md3" />
+    <None Include="ModelFiles\static\vegetation\canopy\blad.mtl" />
+    <None Include="ModelFiles\static\vegetation\canopy\blad.obj" />
+    <None Include="ModelFiles\static\vegetation\canopy\canopy.c4d" />
+    <None Include="ModelFiles\static\vegetation\canopy\canopy.mtl" />
+    <None Include="ModelFiles\static\vegetation\canopy\canopy.obj" />
+    <None Include="ModelFiles\static\vegetation\canopy\stam.md3" />
+    <None Include="ModelFiles\static\vegetation\canopy\stam.mtl" />
+    <None Include="ModelFiles\static\vegetation\canopy\stam.obj" />
+    <None Include="ModelFiles\static\vegetation\grass\grass.c4d" />
+    <None Include="ModelFiles\static\vegetation\grass\grass.md3" />
+    <None Include="ModelFiles\static\vegetation\grass\grass.mtl" />
+    <None Include="ModelFiles\static\vegetation\grass\grass.obj" />
+    <None Include="ModelFiles\static\vegetation\palm1\blad.md3" />
+    <None Include="ModelFiles\static\vegetation\palm1\blad.mtl" />
+    <None Include="ModelFiles\static\vegetation\palm1\blad.obj" />
+    <None Include="ModelFiles\static\vegetation\palm1\palm1.c4d" />
+    <None Include="ModelFiles\static\vegetation\palm1\stam.md3" />
+    <None Include="ModelFiles\static\vegetation\palm1\stam.mtl" />
+    <None Include="ModelFiles\static\vegetation\palm1\stam.obj" />
+    <None Include="ModelFiles\static\vegetation\palm\blad.md3" />
+    <None Include="ModelFiles\static\vegetation\palm\blad.mtl" />
+    <None Include="ModelFiles\static\vegetation\palm\blad.obj" />
+    <None Include="ModelFiles\static\vegetation\palm\palm.c4d" />
+    <None Include="ModelFiles\static\vegetation\palm\stam.md3" />
+    <None Include="ModelFiles\static\vegetation\palm\stam.mtl" />
+    <None Include="ModelFiles\static\vegetation\palm\stam.obj" />
+    <None Include="ModelFiles\static\vegetation\plant\plant.c4d" />
+    <None Include="ModelFiles\static\vegetation\plant\plant.md3" />
+    <None Include="ModelFiles\static\vegetation\plant\plant.mtl" />
+    <None Include="ModelFiles\static\vegetation\plant\plant.obj" />
+    <None Include="ModelFiles\static\vegetation\spar\blad.md3" />
+    <None Include="ModelFiles\static\vegetation\spar\blad.mtl" />
+    <None Include="ModelFiles\static\vegetation\spar\blad.obj" />
+    <None Include="ModelFiles\static\vegetation\spar\boom.c4d" />
+    <None Include="ModelFiles\static\vegetation\spar\boom.mtl" />
+    <None Include="ModelFiles\static\vegetation\spar\stam.md3" />
+    <None Include="ModelFiles\static\vegetation\spar\stam.mtl" />
+    <None Include="ModelFiles\static\vegetation\spar\stam.obj" />
+    <None Include="ModelFiles\static\vegetation\struik\struik.c4d" />
+    <None Include="ModelFiles\static\vegetation\struik\struik.md3" />
+    <None Include="ModelFiles\static\vegetation\struik\struik.mtl" />
+    <None Include="ModelFiles\static\vegetation\struik\struik.obj" />
+    <None Include="ModelFiles\static\vegetation\varen\varen.c4d" />
+    <None Include="ModelFiles\static\vegetation\varen\varen.md3" />
+    <None Include="ModelFiles\static\vegetation\varen\varen.mtl" />
+    <None Include="ModelFiles\static\vegetation\varen\varen.obj" />
+    <None Include="ModelFiles\zombie.md2" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Shaders\2Dfrag.fragmentshader" />
+    <None Include="Shaders\2Dvertex.vertexshader" />
+    <None Include="Shaders\SimpleFragmentShader.fragmentshader" />
+    <None Include="Shaders\SimpleVertexShader.vertexshader" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelFiles\animated\md2LOL\Blade.jpg" />
+    <Content Include="ModelFiles\animated\md2LOL\fiora.PNG" />
+    <Content Include="ModelFiles\animated\md2LOL\garen.png" />
+    <Content Include="ModelFiles\animated\md2LOL\pirate.png" />
+    <Content Include="ModelFiles\animated\md2LOL\wolf.PNG" />
+    <Content Include="ModelFiles\animated\md2LOL\zombie.PNG" />
+    <Content Include="ModelFiles\animated\md2LOL\zombie1.PNG" />
+    <Content Include="ModelFiles\animated\md2\blade\Blade.jpg" />
+    <Content Include="ModelFiles\animated\md2\drfreak\drfreak.jpg" />
+    <Content Include="ModelFiles\animated\md2\samourai\Samourai.jpg" />
+    <Content Include="ModelFiles\static\building\Read Me.txt" />
+    <Content Include="ModelFiles\static\building\tex_build_01d.jpg" />
+    <Content Include="ModelFiles\static\building\tex_build_01n.jpg" />
+    <Content Include="ModelFiles\static\building\tex_build_01occ.jpg" />
+    <Content Include="ModelFiles\static\building\tex_build_01s.jpg" />
+    <Content Include="ModelFiles\static\bullet\45_renders\shell_1.jpg" />
+    <Content Include="ModelFiles\static\bullet\45_renders\shell_2.jpg" />
+    <Content Include="ModelFiles\static\bullet\45_renders\shell_3.jpg" />
+    <Content Include="ModelFiles\static\bullet\45_renders\shell_4.jpg" />
+    <Content Include="ModelFiles\static\bullet\45_renders\shell_5.jpg" />
+    <Content Include="ModelFiles\static\bullet\45_renders\shell_6.jpg" />
+    <Content Include="ModelFiles\static\bullet\45_renders\shell_7.jpg" />
+    <Content Include="ModelFiles\static\bullet\tex_2\bullet.jpg" />
+    <Content Include="ModelFiles\static\bullet\tex_2\dirt_texture.jpg" />
+    <Content Include="ModelFiles\static\bullet\tex_2\metal_scratches.jpg" />
+    <Content Include="ModelFiles\static\bullet\tex_2\metal_scratches_1.jpg" />
+    <Content Include="ModelFiles\static\car\Tex_0019_1.png" />
+    <Content Include="ModelFiles\static\car\Tex_0019_6.png" />
+    <Content Include="ModelFiles\static\car\Tex_0020_1.png" />
+    <Content Include="ModelFiles\static\car\Tex_0020_6.png" />
+    <Content Include="ModelFiles\static\gun\gun.png" />
+    <Content Include="ModelFiles\static\gun\readme.txt" />
+    <Content Include="ModelFiles\static\gun\rif_m4a1.jpg" />
+    <Content Include="ModelFiles\static\House\house.jpg" />
+    <Content Include="ModelFiles\static\jeep\jeep1.jpg" />
+    <Content Include="ModelFiles\static\Rocks\rock.PNG" />
+    <Content Include="ModelFiles\static\Rocks\Textures\Rock %281%29.jpg" />
+    <Content Include="ModelFiles\static\Rocks\Textures\Rock %282%29.JPG" />
+    <Content Include="ModelFiles\static\Rocks\Textures\Rock %283%29.jpg" />
+    <Content Include="ModelFiles\static\Rocks\Textures\Rock %284%29.jpg" />
+    <Content Include="ModelFiles\static\sky\desertsky_bk.jpg" />
+    <Content Include="ModelFiles\static\sky\desertsky_dn.jpg" />
+    <Content Include="ModelFiles\static\sky\desertsky_ft.jpg" />
+    <Content Include="ModelFiles\static\sky\desertsky_lf_1.jpg" />
+    <Content Include="ModelFiles\static\sky\desertsky_rt_1.jpg" />
+    <Content Include="ModelFiles\static\sky\desertsky_up.jpg" />
+    <Content Include="ModelFiles\static\spider\drkwood2.jpg" />
+    <Content Include="ModelFiles\static\spider\engineflare1.jpg" />
+    <Content Include="ModelFiles\static\spider\SpiderTex.jpg" />
+    <Content Include="ModelFiles\static\spider\wal67ar_small.jpg" />
+    <Content Include="ModelFiles\static\spider\wal69ar_small.jpg" />
+    <Content Include="ModelFiles\static\stones\rock.png" />
+    <Content Include="ModelFiles\static\stones\Stone.png" />
+    <Content Include="ModelFiles\static\tree\bark.jpg" />
+    <Content Include="ModelFiles\static\tree\bark_0004.jpg" />
+    <Content Include="ModelFiles\static\tree\branch.png" />
+    <Content Include="ModelFiles\static\tree\DB2X2_L01.png" />
+    <Content Include="ModelFiles\static\tree\DB2X2_L02.png" />
+    <Content Include="ModelFiles\static\tree\DB2X2_L02_NRM.png" />
+    <Content Include="ModelFiles\static\tree\Render.jpeg" />
+    <Content Include="ModelFiles\static\tree\Tree\bark_0021.jpg" />
+    <Content Include="ModelFiles\static\tree\Tree\DB2X2_L01.png" />
+    <Content Include="ModelFiles\static\tree\Tree\DB2X2_L01_Spec.png" />
+    <Content Include="ModelFiles\static\tree\Tree\Tree.fbm\bark_0021.jpg" />
+    <Content Include="ModelFiles\static\tree\Tree\Tree.fbm\DB2X2_L01.png" />
+    <Content Include="ModelFiles\static\tree\Tree\Tree.fbm\DB2X2_L01_Nor.png" />
+    <Content Include="ModelFiles\static\tree\Tree\Tree.fbm\DB2X2_L01_Spec.png" />
+    <Content Include="ModelFiles\static\tree\Tree\tree.jpeg" />
+    <Content Include="ModelFiles\static\tree\Tree\tree2.jpeg" />
+    <Content Include="ModelFiles\static\vegetation\canopy\canopy.png" />
+    <Content Include="ModelFiles\static\vegetation\canopy\tex\canopy.png" />
+    <Content Include="ModelFiles\static\vegetation\canopy\tex\conopy.bmp" />
+    <Content Include="ModelFiles\static\vegetation\grass\grass.png" />
+    <Content Include="ModelFiles\static\vegetation\grass\tex\grass.bmp" />
+    <Content Include="ModelFiles\static\vegetation\grass\tex\grass.png" />
+    <Content Include="ModelFiles\static\vegetation\palm1\palm.png" />
+    <Content Include="ModelFiles\static\vegetation\palm1\tex\palm.png" />
+    <Content Include="ModelFiles\static\vegetation\palm1\tex\palm1.bmp" />
+    <Content Include="ModelFiles\static\vegetation\palm\palm.png" />
+    <Content Include="ModelFiles\static\vegetation\palm\tex\palm.bmp" />
+    <Content Include="ModelFiles\static\vegetation\palm\tex\palm.png" />
+    <Content Include="ModelFiles\static\vegetation\plant\plant.png" />
+    <Content Include="ModelFiles\static\vegetation\plant\tex\plant.bmp" />
+    <Content Include="ModelFiles\static\vegetation\plant\tex\plant.png" />
+    <Content Include="ModelFiles\static\vegetation\spar\spar.png" />
+    <Content Include="ModelFiles\static\vegetation\spar\tex\spar.bmp" />
+    <Content Include="ModelFiles\static\vegetation\spar\tex\spar.png" />
+    <Content Include="ModelFiles\static\vegetation\struik\struik.png" />
+    <Content Include="ModelFiles\static\vegetation\struik\tex\struik.bmp" />
+    <Content Include="ModelFiles\static\vegetation\struik\tex\struik.png" />
+    <Content Include="ModelFiles\static\vegetation\varen\tex\varen.bmp" />
+    <Content Include="ModelFiles\static\vegetation\varen\tex\varen.png" />
+    <Content Include="ModelFiles\static\vegetation\varen\varen.png" />
+    <Content Include="ModelFiles\zombie.PNG" />
+    <Content Include="Textures\BackHP.bmp" />
+    <Content Include="Textures\crate.jpg" />
+    <Content Include="Textures\desertsky_bk.jpg" />
+    <Content Include="Textures\desertsky_dn.jpg" />
+    <Content Include="Textures\desertsky_ft.jpg" />
+    <Content Include="Textures\desertsky_lf_1.jpg" />
+    <Content Include="Textures\desertsky_rt_1.jpg" />
+    <Content Include="Textures\desertsky_up.jpg" />
+    <Content Include="Textures\grass.jpg" />
+    <Content Include="Textures\Ground.jpg" />
+    <Content Include="Textures\HP.bmp" />
+    <Content Include="Textures\Rock %283%29.jpg" />
+    <Content Include="Textures\water.PNG" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
